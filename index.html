@@ -15,7 +15,7 @@
   <meta name="description" content="Prenota una consulenza gratuita di 30 minuti con UpGold Acquisizioni per capire se il Property Management fa per te. Roadmap personalizzata, zero pressioni." />
 
   <!-- Security Headers -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.youtube.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; frame-src https://www.youtube.com; connect-src 'self' https://cdnjs.cloudflare.com;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.youtube.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; frame-src https://www.youtube.com; connect-src 'self';">
   <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -459,7 +459,7 @@
       if(window.Chart){ render(); }
       else{
         var s=document.createElement('script');
-        s.src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js';
+        s.src='assets/js/chart.min.js';
         s.onload=render;
         document.head.appendChild(s);
       }
