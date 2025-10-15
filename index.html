@@ -21,6 +21,10 @@
   <meta http-equiv="Permissions-Policy" content="accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()">
   <meta name="referrer" content="strict-origin-when-cross-origin">
 
+  <!-- Preload critical resources -->
+  <link rel="preload" href="assets/css/tailwind.min.css" as="style">
+  <link rel="preload" href="assets/css/fonts.css" as="style">
+
   <!-- Fonts (Self-Hosted) -->
   <link rel="stylesheet" href="assets/css/fonts.css">
 
@@ -137,16 +141,7 @@
       <div class="order-2 md:hidden mb-8">
         <div class="bg-white p-3 rounded-2xl shadow-xl max-w-2xl w-full mx-auto">
           <div class="rounded-xl overflow-hidden" style="aspect-ratio:16/9">
-            <iframe
-              src="https://www.youtube.com/embed/YOUR_VIDEO_ID?rel=0&modestbranding=1&playsinline=1&color=white"
-              title="Video di presentazione UpGold"
-              class="w-full h-full"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-              referrerpolicy="strict-origin-when-cross-origin"
-              style="border:0">
-            </iframe>
+            <div class="youtube-facade relative w-full h-full bg-gray-900 cursor-pointer" data-video-id="YOUR_VIDEO_ID"></div>
           </div>
         </div>
       </div>
@@ -237,16 +232,7 @@
     <div class="hidden md:flex md:w-1/2 md:order-2 justify-center min-w-0 md:mt-12">
       <div class="bg-white p-4 rounded-2xl shadow-xl max-w-2xl w-full floating">
         <div class="rounded-xl overflow-hidden" style="aspect-ratio:16/9">
-          <iframe
-            src="https://www.youtube.com/embed/YOUR_VIDEO_ID?rel=0&modestbranding=1&playsinline=1&color=white"
-            title="Video di presentazione UpGold"
-            class="w-full h-full"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-            referrerpolicy="strict-origin-when-cross-origin"
-            style="border:0">
-          </iframe>
+          <div class="youtube-facade relative w-full h-full bg-gray-900 cursor-pointer" data-video-id="YOUR_VIDEO_ID"></div>
         </div>
       </div>
     </div>
@@ -404,12 +390,24 @@
     @media (min-width: 1024px){ .pm-chart-wrap{height:340px} }
   </style>
 
-  <!-- Chart.js + render -->
+  <!-- Chart.js + render (deferred) -->
   <script>
   (function(){
     function render(){
       var el = document.getElementById('pmChart');
       if(!el) return;
+
+      // Usa requestIdleCallback per non bloccare il rendering
+      if('requestIdleCallback' in window){
+        requestIdleCallback(function(){
+          renderChart(el);
+        });
+      } else {
+        setTimeout(function(){ renderChart(el); }, 100);
+      }
+    }
+
+    function renderChart(el){
       var ctx = el.getContext('2d');
 
       new Chart(ctx,{
@@ -831,6 +829,9 @@
       </div>
     </div>
   </footer>
+
+  <!-- YouTube Facade (async load) -->
+  <script src="assets/js/youtube-facade.js" async></script>
 
   <!-- Init scripts -->
   <script>
