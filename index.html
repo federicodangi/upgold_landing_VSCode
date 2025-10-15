@@ -905,7 +905,11 @@
   }, { passive: true });
 
   window.addEventListener('resize', setProgress, { passive: true });
+  window.addEventListener('load', setProgress, { passive: true });
+
+  // Inizializza immediatamente e dopo un breve delay per sicurezza
   setProgress();
+  setTimeout(setProgress, 100);
 })();
 </script>
 
