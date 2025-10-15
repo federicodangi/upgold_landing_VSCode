@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consulenza Property Management | UpGold Acquisizioni</title>
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#002560" />
+
+  <meta name="description" content="Prenota una consulenza gratuita di 30 minuti con UpGold Acquisizioni per capire se il Property Management fa per te. Roadmap personalizzata, zero pressioni." />
+
+  <!-- Fonts (Self-Hosted) -->
+  <link rel="stylesheet" href="assets/css/fonts.css">
+
+  <!-- Tailwind CSS (Ottimizzato) -->
+  <link rel="stylesheet" href="assets/css/tailwind.min.css">
+
+  <!-- Brand palette (Tailwind arbitrary colors helper classes) -->
+  <style>
+    :root {
+      --upg-blue: #002560;
+      --upg-red: #EC1B24;
+      --upg-red-dark: #C4171E;
+      --upg-red-deep: #B11219;
+      --progress-h: 4px;
+    }
+
+    html, body { 
+      overflow-x: hidden; 
+    }
+
+    body { 
+      font-family: 'Poppins', sans-serif; 
+    }
+
+    .hero-gradient { 
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); 
+    }
+
+    .floating { 
+      animation: floating 3s ease-in-out infinite; 
+    }
+
+    @keyframes floating { 
+      0% { transform: translateY(0) } 
+      50% { transform: translateY(-15px) } 
+      100% { transform: translateY(0) } 
+    }
+
+    /* Focus states (WCAG) */
+    .focus-ring:focus-visible { 
+      outline: 3px solid #EC1B24; 
+      outline-offset: 2px; 
+    }
+
+    /* Scroll anchoring: header (84px) */
+    html { 
+      scroll-padding-top: 84px; 
+      scroll-behavior: smooth; 
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .floating { animation: none !important; }
+    }
+
+    /* Helper: riga badge scorrevole senza scrollbar visibile */
+    .no-scrollbar::-webkit-scrollbar { display: none }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none }
+  </style>
+
+  <!-- Nessuno script esterno necessario qui -->
+</head>
+<body class="bg-gray-50 text-[#002560]">
+  <!-- Barra avanzamento scroll -->
+  <div id="scroll-progress"
+       class="fixed top-0 left-0 right-0 h-[var(--progress-h)] z-[60] pointer-events-none"
+       role="presentation" aria-hidden="true">
+    <div id="scroll-progress__inner"
+         class="h-full bg-[var(--upg-red)]"
+         style="transform: scaleX(0); transform-origin: left; will-change: transform;"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70 shadow-md" role="banner">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="#top" class="inline-flex items-center focus-ring" aria-label="Homepage UpGold Acquisizioni">
+        <img src="https://upgoldacquisizioni.it/wp-content/uploads/2025/09/logo-bimi.svg" 
+             alt="Logo UpGold Acquisizioni" 
+             class="h-12" 
+             loading="eager" 
+             decoding="async">
+      </a>
+      <a href="#prenota"
+         class="focus-ring inline-flex items-center bg-[var(--upg-red)] hover:bg-[var(--upg-red-dark)] text-white font-bold py-3 px-6 rounded-full transition duration-300">
+        <svg class="mr-2 w-5 h-5" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        Prenota Ora
+      </a>
+    </div>
+  </header>
+
+ <!-- Hero Section -->
+<section class="hero-gradient relative overflow-visible md:overflow-hidden" id="top">
+  <div class="container mx-auto px-4 py-12 md:py-0 md:min-h-screen flex flex-col md:flex-row items-center md:items-center justify-center">
+
+    <!-- Colonna sinistra (testo) -->
+    <div class="md:w-1/2 md:order-1 min-w-0 flex flex-col w-full">
+      <!-- Titolo: centrato SOLO mobile, allineato a sinistra su desktop -->
+      <h1 class="order-1 font-bold tracking-tight mb-6 text-center md:text-left leading-tight md:leading-[1.2] text-[28px] sm:text-[32px] md:text-5xl">
+        <span class="text-[#002560]">Capisci in </span>
+        <span class="text-[var(--upg-red)]">30 minuti</span>
+        <br class="md:hidden">
+        <span class="text-[#002560]">se il </span>
+        <span class="text-[var(--upg-red)]">Property Management</span>
+        <br class="md:hidden">
+        <span class="text-[#002560]">fa per te</span>
+      </h1>
+
+      <!-- Video (solo mobile, tra H1 e descrizione) -->
+      <div class="order-2 md:hidden mb-8">
+        <div class="bg-white p-3 rounded-2xl shadow-xl max-w-2xl w-full mx-auto">
+          <div class="rounded-xl overflow-hidden" style="aspect-ratio:16/9">
+            <iframe
+              src="https://www.youtube.com/embed/YOUR_VIDEO_ID?rel=0&modestbranding=1&playsinline=1&color=white"
+              title="Video di presentazione UpGold"
+              class="w-full h-full"
+              loading="lazy"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              referrerpolicy="strict-origin-when-cross-origin">
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Descrizione -->
+      <p class="order-3 text-lg md:text-xl text-[#002560] mb-8 max-w-2xl
+                 text-center md:text-left leading-normal md:leading-relaxed">
+        Ti regaliamo una consulenza personalizzata con Gianpaolo Delle Donne, co-founder di UpGold Acquisizioni.
+      </p>
+
+      <!-- Lista con icone -->
+      <ul class="order-4 space-y-3 mb-6 md:mb-8">
+        <li class="flex items-start">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-3 text-[var(--upg-red)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span class="text-[#002560]">Valutiamo il tuo profilo e le tue possibilità</span>
+        </li>
+        <li class="flex items-start">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-3 text-[var(--upg-red)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span class="text-[#002560]">Ti forniamo una roadmap personalizzata per i tuoi primi passi</span>
+        </li>
+        <li class="flex items-start">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-3 text-[var(--upg-red)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span class="text-[#002560]">Rispondiamo ai tuoi dubbi specifici sul settore</span>
+        </li>
+        <li class="flex items-start">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-3 text-[var(--upg-red)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span class="text-[#002560]">Ti segnaliamo errori da evitare e opportunità da cogliere</span>
+        </li>
+      </ul>
+
+      <!-- Mini-badge: responsive senza scroll orizzontale -->
+      <div class="order-5 mb-8">
+        <div class="flex flex-col md:flex-row items-center justify-center md:justify-start gap-y-3 gap-x-5
+                    text-[#002560] text-sm md:text-base font-medium">
+          <span class="flex items-center">
+            <svg class="w-4 h-4 md:w-5 md:h-5 text-[var(--upg-red)] mr-2" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+              <polyline points="17 6 23 6 23 12"></polyline>
+            </svg>
+            +7 anni nel settore
+          </span>
+          <span class="hidden md:inline opacity-30 select-none">|</span>
+          <span class="flex items-center">
+            <svg class="w-4 h-4 md:w-5 md:h-5 text-[var(--upg-red)] mr-2" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+            </svg>
+            Strategia personalizzata
+          </span>
+          <span class="hidden md:inline opacity-30 select-none">|</span>
+          <span class="flex items-center">
+            <svg class="w-4 h-4 md:w-5 md:h-5 text-[var(--upg-red)] mr-2" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            Solo 7 slot a settimana
+          </span>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="order-6 flex justify-center md:justify-start">
+        <a href="#prenota"
+           class="focus-ring inline-flex items-center justify-center text-base md:text-lg bg-[var(--upg-red)] hover:bg-[var(--upg-red-dark)] text-white font-bold py-3 px-6 md:py-4 md:px-8 rounded-full transition duration-300 text-center">
+          <span class="md:hidden leading-tight">
+            Prenota la tua<br>consulenza gratuita
+          </span>
+          <span class="hidden md:inline">
+            Prenota la tua consulenza gratuita
+          </span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Colonna destra (video) - solo desktop -->
+    <div class="hidden md:flex md:w-1/2 md:order-2 justify-center min-w-0 md:mt-12">
+      <div class="bg-white p-4 rounded-2xl shadow-xl max-w-2xl w-full floating">
+        <div class="rounded-xl overflow-hidden" style="aspect-ratio:16/9">
+          <iframe
+            src="https://www.youtube.com/embed/YOUR_VIDEO_ID?rel=0&modestbranding=1&playsinline=1&color=white"
+            title="Video di presentazione UpGold"
+            class="w-full h-full"
+            loading="lazy"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            referrerpolicy="strict-origin-when-cross-origin">
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- Business Model -->
+<section class="py-20 bg-white">
+  <div class="container mx-auto px-4">
+    <!-- Titolo -->
+    <div class="text-center mb-14">
+      <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-10 leading-[1.25] text-center">
+       <span class="text-[#002560]">Scopri il Business Model</span><br>
+       <span class="text-[#002560]">che fa <span class="text-[var(--upg-red)]">guadagnare con gli immobili...</span></span><br>
+       <span class="text-[#002560]">Anche senza possederli!</span>
+      </h2>
+
+      <!-- Spiegazione -->
+      <div class="space-y-4 max-w-4xl mx-auto px-4 md:px-0">
+        <p class="text-base md:text-xl text-[#002560]/80 leading-relaxed text-center">
+          Il Property Management è l'opportunità che ti permette di entrare nel mercato immobiliare senza comprare case.
+        </p>
+        <p class="text-base md:text-xl text-[#002560]/80 leading-relaxed text-center">
+          Gestisci proprietà altrui su Airbnb e Booking, ottimizzi i ricavi, trattieni il 15–25%.
+        </p>
+        <p class="text-base md:text-xl text-[#002560]/80 font-medium leading-relaxed text-center">
+          Un business scalabile e redditizio.
+        </p>
+      </div>
+    </div>
+
+   <!-- 3 Card -->
+<div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+  <!-- Card 1 -->
+  <div class="group relative overflow-hidden bg-white p-8 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] ring-1 ring-black/5 transition-all duration-300 hover:shadow-[0_14px_40px_rgba(0,0,0,0.12)] hover:-translate-y-0.5">
+    <span class="pointer-events-none absolute inset-x-8 top-0 h-[3px] rounded-full bg-transparent transition-colors duration-300 group-hover:bg-[var(--upg-red)]"></span>
+    <div class="mx-auto mb-6 w-20 h-20 rounded-full bg-[#002560] shadow-[0_10px_25px_rgba(0,37,96,0.28)] grid place-items-center">
+      <span class="text-4xl" aria-hidden="true">🤔</span>
+    </div>
+    <h3 class="text-2xl font-bold text-[#002560] text-center mb-3">Valuti</h3>
+    <p class="text-center text-[#002560]/80 leading-relaxed">
+      Scopri se il Property Management è l’opportunità che fa per te.
+    </p>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="group relative overflow-hidden bg-white p-8 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] ring-1 ring-black/5 transition-all duration-300 hover:shadow-[0_14px_40px_rgba(0,0,0,0.12)] hover:-translate-y-0.5">
+    <span class="pointer-events-none absolute inset-x-8 top-0 h-[3px] rounded-full bg-transparent transition-colors duration-300 group-hover:bg-[var(--upg-red)]"></span>
+    <div class="mx-auto mb-6 w-20 h-20 rounded-full bg-[var(--upg-red)] shadow-[0_10px_25px_rgba(236,27,36,0.28)] grid place-items-center">
+      <span class="text-4xl" aria-hidden="true">🧠</span>
+    </div>
+    <h3 class="text-2xl font-bold text-[#002560] text-center mb-3">Pianifichi</h3>
+    <p class="text-center text-[#002560]/80 leading-relaxed">
+      Strategia step-by-step per iniziare senza errori costosi.
+    </p>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="group relative overflow-hidden bg-white p-8 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] ring-1 ring-black/5 transition-all duration-300 hover:shadow-[0_14px_40px_rgba(0,0,0,0.12)] hover:-translate-y-0.5">
+    <span class="pointer-events-none absolute inset-x-8 top-0 h-[3px] rounded-full bg-transparent transition-colors duration-300 group-hover:bg-[var(--upg-red)]"></span>
+    <div class="mx-auto mb-6 w-20 h-20 rounded-full bg-[#002560] shadow-[0_10px_25px_rgba(0,37,96,0.28)] grid place-items-center">
+      <span class="text-4xl" aria-hidden="true">🤑</span>
+    </div>
+    <h3 class="text-2xl font-bold text-[#002560] text-center mb-3">Guadagni</h3>
+    <p class="text-center text-[#002560]/80 leading-relaxed">
+      Ottieni i primi ricavi entro 30 giorni dall’avvio.
+    </p>
+  </div>
+
+</div>
+
+    <!-- CTA sezione -->
+    <div class="text-center mt-12">
+      <a href="#prenota"
+         class="focus-ring inline-flex items-center justify-center text-base md:text-lg
+                bg-[var(--upg-red)] hover:bg-[var(--upg-red-dark)] text-white font-bold
+                py-4 px-8 md:px-10 rounded-full transition duration-300 shadow-lg">
+        Richiedi ora la tua Consulenza
+        <svg class="ml-2 w-5 h-5" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+  <!-- Market -->
+<section class="py-16 md:py-20 bg-gray-50" id="mercato">
+  <div class="container mx-auto px-4 max-w-6xl">
+
+    <!-- Titolo sezione -->
+    <h2 class="text-center font-bold tracking-tight leading-tight mb-10 md:mb-12
+           text-[clamp(28px,4.2vw,44px)]">
+     <span class="text-[#002560]">Perché questo è il</span>
+     <br class="md:hidden">
+     <span class="text-[var(--upg-red)]">miglior momento</span>
+     <span class="text-[#002560]"> per entrare</span>
+     <br class="md:hidden">
+     <span class="text-[#002560]">in questo mercato</span>
+    </h2>
+
+    <div class="grid lg:grid-cols-2 gap-10 md:gap-12 items-start">
+      <!-- SX: Testo + CTA -->
+      <div class="order-2 lg:order-1 px-4 lg:px-0">
+        <div class="space-y-5 text-base md:text-lg text-[#002560]/90 mx-auto lg:mx-0 lg:max-w-[52ch]">
+          <p>
+            Il mercato degli affitti brevi in Italia ha raggiunto i
+            <strong class="text-[#002560]">66 miliardi di euro nel 2024</strong>, con una crescita del
+            <strong class="text-[#002560]">38% negli ultimi tre anni</strong>. Con oltre
+            <strong class="text-[#002560]">754.000 annunci attivi</strong>, sempre più proprietari cercano professionisti
+            per gestire le loro proprietà.
+          </p>
+          <p>
+            Attualmente ci sono circa <strong class="text-[#002560]">700 property manager certificati</strong>
+            per gestire oltre <strong class="text-[#002560]">65.000 proprietà</strong> in tutta Italia.
+            Il rapporto domanda/offerta indica ancora spazio per nuovi professionisti qualificati,
+            specialmente in zone meno sature.
+          </p>
+        </div>
+
+        <a href="#prenota"
+           class="mt-7 inline-flex items-center justify-center text-base md:text-lg
+                  bg-[var(--upg-red)] hover:bg-[var(--upg-red-dark)] text-white font-bold
+                  py-4 px-8 md:px-10 rounded-full transition duration-300 shadow-lg
+                  mx-auto md:mx-0 text-center">
+          Non lasciarti sfuggire questa occasione
+          <svg class="ml-2 w-5 h-5" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <!-- DX: Chart card -->
+      <div class="order-1 lg:order-2 px-4 lg:px-0">
+        <div class="bg-white rounded-2xl shadow-sm ring-1 ring-black/5 p-4 md:p-5">
+          <div class="pm-chart-wrap">
+            <canvas id="pmChart"></canvas>
+          </div>
+        </div>
+        <p class="text-center text-sm md:text-base text-[#002560]/70 mt-3 md:mt-4">
+          Evoluzione del mercato degli Affitti Brevi post Covid-19
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stili specifici del grafico -->
+  <style>
+    /* Altezza comoda e coerente con il testo a sinistra */
+    .pm-chart-wrap{position:relative;height:300px}
+    @media (min-width: 1024px){ .pm-chart-wrap{height:340px} }
+  </style>
+
+  <!-- Chart.js + render -->
+  <script>
+  (function(){
+    function render(){
+      var el = document.getElementById('pmChart');
+      if(!el) return;
+      var ctx = el.getContext('2d');
+
+      new Chart(ctx,{
+        type:'line',
+        data:{
+          labels:['2021','2022','2023','2024'],
+          datasets:[{
+            label:'Valore Mercato (Miliardi €)',
+            data:[48,53,56,66],
+            borderColor:'#EC1B24',
+            backgroundColor:'rgba(236,27,36,0.10)',
+            borderWidth:4,
+            fill:true,
+            tension:0.35,
+            pointBackgroundColor:'#EC1B24',
+            pointBorderColor:'#EC1B24',
+            pointBorderWidth:3,
+            pointRadius:6,
+            hoverRadius:7
+          }]
+        },
+        options:{
+          responsive:true,
+          maintainAspectRatio:false,
+          layout:{padding:{left:4,right:8,top:8,bottom:0}},
+          plugins:{legend:{display:false}},
+          scales:{
+            y:{
+              beginAtZero:false, min:40, max:70,
+              ticks:{
+                callback:function(v){ return v+' Mld€'; },
+                color:'#546276',
+                font:{size:12,weight:'500'},
+                maxTicksLimit:7
+              },
+              grid:{color:'rgba(84,98,118,0.12)'}
+            },
+            x:{
+              ticks:{color:'#546276',font:{size:12,weight:'600'}},
+              grid:{display:false}
+            }
+          }
+        }
+      });
+    }
+
+    function start(){
+      if(window.Chart){ render(); }
+      else{
+        var s=document.createElement('script');
+        s.src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js';
+        s.onload=render;
+        document.head.appendChild(s);
+      }
+    }
+
+    if(document.readyState==='complete'||document.readyState==='interactive') start();
+    else document.addEventListener('DOMContentLoaded', start);
+  })();
+  </script>
+</section>
+
+   <!-- Benefits -->
+<section class="py-20 bg-white">
+  <div class="container mx-auto px-4">
+    <!-- Titolo -->
+    <div class="text-center mb-14">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-[#002560]">
+        Cosa ottieni dalla tua <span class="text-[var(--upg-red)]">consulenza gratuita</span> con UpGold
+      </h2>
+    </div>
+
+    <!-- Griglia card -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+      <!-- Card 1 -->
+      <div class="group relative bg-gray-50 rounded-2xl p-8 shadow-[0_12px_28px_rgba(0,0,0,0.08)] ring-1 ring-black/5 transition-all duration-300 hover:shadow-[0_18px_40px_rgba(0,0,0,0.12)] hover:-translate-y-0.5">
+        <span class="pointer-events-none absolute left-3 right-3 -top-px h-1 rounded-t-2xl bg-transparent transition-colors duration-300 group-hover:bg-[var(--upg-red)]"></span>
+        <h3 class="text-xl font-bold text-[#002560] mb-3">Chiarezza immediata</h3>
+        <p class="text-[#002560]/80 leading-relaxed">Capisci subito se questo settore può essere adatto a te e alla tua situazione.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="group relative bg-gray-50 rounded-2xl p-8 shadow-[0_12px_28px_rgba(0,0,0,0.08)] ring-1 ring-black/5 transition-all duration-300 hover:shadow-[0_18px_40px_rgba(0,0,0,0.12)] hover:-translate-y-0.5">
+        <span class="pointer-events-none absolute left-3 right-3 -top-px h-1 rounded-t-2xl bg-transparent transition-colors duration-300 group-hover:bg-[var(--upg-red)]"></span>
+        <h3 class="text-xl font-bold text-[#002560] mb-3">Tempo risparmiato</h3>
+        <p class="text-[#002560]/80 leading-relaxed">Eviti mesi di ricerche confuse e contraddittorie online.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="group relative bg-gray-50 rounded-2xl p-8 shadow-[0_12px_28px_rgba(0,0,0,0.08)] ring-1 ring-black/5 transition-all duration-300 hover:shadow-[0_18px_40px_rgba(0,0,0,0.12)] hover:-translate-y-0.5">
+        <span class="pointer-events-none absolute left-3 right-3 -top-px h-1 rounded-t-2xl bg-transparent transition-colors duration-300 group-hover:bg-[var(--upg-red)]"></span>
+        <h3 class="text-xl font-bold text-[#002560] mb-3">Prime mosse concrete</h3>
+        <p class="text-[#002560]/80 leading-relaxed">Ricevi indicazioni pratiche su come iniziare nel modo giusto.</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="group relative bg-gray-50 rounded-2xl p-8 shadow-[0_12px_28px_rgba(0,0,0,0.08)] ring-1 ring-black/5 transition-all duration-300 hover:shadow-[0_18px_40px_rgba(0,0,0,0.12)] hover:-translate-y-0.5">
+        <span class="pointer-events-none absolute left-3 right-3 -top-px h-1 rounded-t-2xl bg-transparent transition-colors duration-300 group-hover:bg-[var(--upg-red)]"></span>
+        <h3 class="text-xl font-bold text-[#002560] mb-3">Errori da evitare</h3>
+        <p class="text-[#002560]/80 leading-relaxed">Scopri le cause di fallimento più comuni e come evitarle fin da subito.</p>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="group relative bg-gray-50 rounded-2xl p-8 shadow-[0_12px_28px_rgba(0,0,0,0.08)] ring-1 ring-black/5 transition-all duration-300 hover:shadow-[0_18px_40px_rgba(0,0,0,0.12)] hover:-translate-y-0.5">
+        <span class="pointer-events-none absolute left-3 right-3 -top-px h-1 rounded-t-2xl bg-transparent transition-colors duration-300 group-hover:bg-[var(--upg-red)]"></span>
+        <h3 class="text-xl font-bold text-[#002560] mb-3">Decisione informata</h3>
+        <p class="text-[#002560]/80 leading-relaxed">Saprai con certezza se procedere o cercare altre opportunità.</p>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="group relative bg-gray-50 rounded-2xl p-8 shadow-[0_12px_28px_rgba(0,0,0,0.08)] ring-1 ring-black/5 transition-all duration-300 hover:shadow-[0_18px_40px_rgba(0,0,0,0.12)] hover:-translate-y-0.5">
+        <span class="pointer-events-none absolute left-3 right-3 -top-px h-1 rounded-t-2xl bg-transparent transition-colors duration-300 group-hover:bg-[var(--upg-red)]"></span>
+        <h3 class="text-xl font-bold text-[#002560] mb-3">Zero impegni</h3>
+        <p class="text-[#002560]/80 leading-relaxed">Nessuna pressione commerciale, solo informazioni utili e oneste.</p>
+      </div>
+    </div>
+
+    <!-- Micro CTA opzionale sotto le card (se ti serve) -->
+    <!--
+    <div class="text-center mt-10">
+      <a href="#prenota" class="focus-ring inline-flex items-center justify-center text-base md:text-lg bg-[var(--upg-red)] hover:bg-[var(--upg-red-dark)] text-white font-bold py-4 px-8 md:px-10 rounded-full transition duration-300 shadow-lg">
+        Richiedi la consulenza gratuita
+        <i data-feather="arrow-right" class="ml-2" aria-hidden="true"></i>
+      </a>
+    </div>
+    -->
+  </div>
+</section>
+
+  <!-- Testimonials -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-[#002560] mb-16">
+        Chi ha già fatto la <span class="text-[var(--upg-red)]">consulenza gratuita</span>
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div class="bg-white p-8 rounded-xl shadow-md">
+          <div class="flex items-center mb-4">
+            <img src="https://static.photos/people/200x200/1" alt="Ritratto di Marco R." class="w-16 h-16 rounded-full mr-4" loading="lazy" decoding="async">
+            <div>
+              <h4 class="font-bold text-[#002560]">Marco R.</h4>
+              <div class="flex text-[var(--upg-red)]" aria-label="Valutazione 5 su 5">
+                <svg class="w-4 h-4 fill-current" aria-hidden="true" viewBox="0 0 24 24">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+                <svg class="w-4 h-4 fill-current" aria-hidden="true" viewBox="0 0 24 24">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+                <svg class="w-4 h-4 fill-current" aria-hidden="true" viewBox="0 0 24 24">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+                <svg class="w-4 h-4 fill-current" aria-hidden="true" viewBox="0 0 24 24">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+                <svg class="w-4 h-4 fill-current" aria-hidden="true" viewBox="0 0 24 24">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <p class="text-[#002560]/80 italic">"In 30 minuti ho capito più che in mesi di ricerche. Roadmap precisa e chiara."</p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-md">
+          <div class="flex items-center mb-4">
+            <img src="https://static.photos/people/200x200/2" alt="Ritratto di Alessandra T." class="w-16 h-16 rounded-full mr-4" loading="lazy" decoding="async">
+            <div>
+              <h4 class="font-bold text-[#002560]">Alessandra T.</h4>
+              <div class="flex text-[var(--upg-red)]" aria-label="Valutazione 5 su 5">
+                <svg class="w-4 h-4 fill-current" aria-hidden="true" viewBox="0 0 24 24">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+                <svg class="w-4 h-4 fill-current" aria-hidden="true" viewBox="0 0 24 24">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+                <svg class="w-4 h-4 fill-current" aria-hidden="true" viewBox="0 0 24 24">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+                <svg class="w-4 h-4 fill-current" aria-hidden="true" viewBox="0 0 24 24">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+                <svg class="w-4 h-4 fill-current" aria-hidden="true" viewBox="0 0 24 24">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <p class="text-[#002560]/80 italic">"Pensavo fosse troppo complicato, invece ho trovato un percorso sostenibile e chiaro."</p>
+        </div>
+      </div>
+
+      <!-- CTA dopo testimonial -->
+      <div class="text-center mt-12">
+        <a href="#prenota"
+           class="focus-ring inline-flex items-center justify-center text-base md:text-lg
+                  bg-[var(--upg-red)] hover:bg-[var(--upg-red-dark)] text-white font-bold
+                  py-4 px-8 md:px-10 rounded-full transition duration-300 shadow-lg">
+          Richiedi ora la tua consulenza
+          <svg class="ml-2 w-5 h-5" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- È per te / Non è per te -->
+<section class="py-20 bg-white">
+  <div class="container mx-auto px-4">
+    <!-- Titolo -->
+    <div class="text-center mb-14">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">
+        <span class="text-[#002560]">La nostra consulenza </span>
+        <span class="text-[var(--upg-red)]">gratuita</span>
+        <span class="text-[#002560]"> fa al caso tuo?</span>
+      </h2>
+    </div>
+
+    <!-- Griglia 2 colonne -->
+    <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      <!-- È per te se -->
+      <div class="bg-gray-50 rounded-2xl shadow-[0_12px_28px_rgba(0,0,0,0.08)] ring-1 ring-black/5 p-8 relative">
+        <span class="absolute left-0 top-0 bottom-0 w-1.5 rounded-l-2xl bg-green-500"></span>
+        <div class="flex items-center mb-4">
+          <span class="text-2xl mr-2" aria-hidden="true">✅</span>
+          <h3 class="text-xl font-bold text-green-600">È per te se</h3>
+        </div>
+        <ul class="space-y-3 text-[#002560]/90 leading-relaxed list-disc pl-5">
+          <li>Vuoi capire se questo settore fa per te</li>
+          <li>Sei disposto a impegnarti seriamente</li>
+          <li>Cerchi chiarezza, non promesse facili</li>
+          <li>Vuoi informazioni da chi opera sul campo</li>
+          <li>Hai bisogno di una strategia personalizzata</li>
+          <li>Ti interessa ottenere formazione di qualità</li>
+        </ul>
+      </div>
+
+      <!-- Non è per te se -->
+      <div class="bg-gray-50 rounded-2xl shadow-[0_12px_28px_rgba(0,0,0,0.08)] ring-1 ring-black/5 p-8 relative">
+        <span class="absolute left-0 top-0 bottom-0 w-1.5 rounded-l-2xl bg-[var(--upg-red)]"></span>
+        <div class="flex items-center mb-4">
+          <span class="text-2xl mr-2" aria-hidden="true">❌</span>
+          <h3 class="text-xl font-bold text-[var(--upg-red)]">Non è per te se</h3>
+        </div>
+        <ul class="space-y-3 text-[#002560]/90 leading-relaxed list-disc pl-5">
+          <li>Cerchi soldi facili senza impegno</li>
+          <li>Vuoi diventare ricco in poche settimane</li>
+          <li>Non hai tempo per apprendere e applicare</li>
+          <li>Preferisci teorie a strategie concrete</li>
+          <li>Hai paura di “sporcarti le mani”</li>
+          <li>Cerchi solo contenuti gratuiti online</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <!-- Comparison -->
+<section class="py-20 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <!-- Titolo -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">
+        <span class="text-[#002560]">Ricerche Online</span>
+        <span class="text-[#002560]"> vs </span>
+        <span class="text-[var(--upg-red)]">consulenza</span><br>
+        <span class="text-[#002560]">cosa conviene?</span>
+      </h2>
+    </div>
+
+    <div class="relative grid md:grid-cols-2 gap-12 max-w-5xl mx-auto items-start">
+      <!-- VS centrale (desktop) -->
+      <div class="hidden md:block absolute left-1/2 top-[58%] -translate-x-1/2 -translate-y-1/2 text-[#002560] font-extrabold text-2xl select-none">VS</div>
+
+      <!-- SINISTRA: Ricerche Online (leggermente più piccola) -->
+      <div class="text-center md:scale-[0.98]">
+        <!-- Cerchio rosso statico -->
+        <div class="mx-auto w-28 h-28 md:w-32 md:h-32 rounded-full bg-[var(--upg-red)] shadow-[0_8px_22px_rgba(236,27,36,0.24)] grid place-items-center">
+          <span class="text-4xl md:text-5xl" aria-hidden="true">🔍</span>
+        </div>
+
+        <h3 class="mt-5 text-2xl font-bold text-[var(--upg-red)]">Ricerche Online</h3>
+
+        <!-- Card dettagli -->
+        <div class="mt-5 inline-block bg-white rounded-2xl shadow-[0_10px_28px_rgba(0,0,0,0.08)] ring-1 ring-black/5 text-left px-6 py-5">
+          <ul class="space-y-2 text-[#002560]/90">
+            <li><span class="text-[#002560]/70">Tempo impiegato:</span> <span class="font-semibold text-[var(--upg-red)]">20+ ore</span></li>
+            <li><span class="text-[#002560]/70">Chiarezza ottenuta:</span> <span class="font-semibold text-[var(--upg-red)]">0%</span></li>
+            <li><span class="text-[#002560]/70">Confusione:</span> <span class="font-semibold text-[var(--upg-red)]">massima</span></li>
+            <li><span class="text-[#002560]/70">Personalizzazione:</span> <span class="font-semibold text-[var(--upg-red)]">Zero</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- DESTRA: Consulenza 1:1 (un filo più grande + pulse) -->
+      <div class="text-center md:scale-[1.03]">
+        <!-- Cerchio verde pulsante -->
+        <div class="mx-auto w-32 h-32 md:w-40 md:h-40 rounded-full bg-[#22c55e] shadow-[0_12px_32px_rgba(34,197,94,0.32)] grid place-items-center pulse-ring">
+          <span class="text-6xl md:text-8xl" aria-hidden="true">👨🏻‍💼</span>
+        </div>
+
+        <h3 class="mt-5 text-2xl font-bold text-[#22c55e]">Consulenza 1:1</h3>
+
+        <!-- Card dettagli (poco più grande) -->
+        <div class="mt-5 inline-block bg-white rounded-2xl shadow-[0_12px_32px_rgba(0,0,0,0.10)] ring-1 ring-black/5 text-left px-7 py-6">
+          <ul class="space-y-2 text-[#002560]/90">
+            <li><span class="text-[#002560]/70">Tempo impiegato:</span> <span class="font-semibold text-[#22c55e]">30 minuti</span></li>
+            <li><span class="text-[#002560]/70">Chiarezza ottenuta:</span> <span class="font-semibold text-[#22c55e]">100%</span></li>
+            <li><span class="text-[#002560]/70">Piano d’azione:</span> <span class="font-semibold text-[#22c55e]">Completo</span></li>
+            <li><span class="text-[#002560]/70">Personalizzazione:</span> <span class="font-semibold text-[#22c55e]">Totale</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Animazione pulsazione (solo per il cerchio verde) -->
+  <style>
+    @keyframes pulse-soft {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34,197,94,0.30); }
+      60% { transform: scale(1.03); box-shadow: 0 0 0 12px rgba(34,197,94,0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+    }
+    .pulse-ring { animation: pulse-soft 2.3s ease-in-out infinite; }
+  </style>
+</section>
+
+  <!-- About (compact) -->
+<section class="py-16 bg-white" id="about">
+  <div class="container mx-auto px-4">
+    <!-- Titolo -->
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-[#002560] tracking-tight mb-10">
+      Chi siamo e con chi parlerai
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-10 items-center max-w-6xl mx-auto">
+      <!-- FOTO: rettangolare grande con bordino rosso on-hover -->
+      <div class="group relative">
+        <div class="rounded-2xl overflow-hidden shadow-[0_16px_40px_rgba(0,0,0,0.12)] transition-all duration-300 group-hover:shadow-[0_22px_60px_rgba(0,0,0,0.16)] group-hover:-translate-y-0.5">
+          <img
+            src="https://upgoldacquisizioni.it/wp-content/uploads/2025/09/Progetto-senza-titolo-1024x1024.png"
+            alt="Gianpaolo Delle Donne, co-founder di UpGold, nel suo studio"
+            class="w-full h-[420px] md:h-[500px] object-cover"
+            loading="lazy" decoding="async"
+          />
+        </div>
+        <!-- Bordo rosso on-hover -->
+        <span class="pointer-events-none absolute inset-0 rounded-2xl ring-0 transition-all duration-300 group-hover:ring-4 group-hover:ring-[var(--upg-red)]"></span>
+      </div>
+
+      <!-- TESTO -->
+      <div class="md:pl-6">
+        <h3 class="text-2xl md:text-3xl font-bold text-[#002560] mb-4">UpGold Acquisizioni</h3>
+        <p class="text-[#002560]/80 leading-relaxed mb-4">
+          Siamo un’azienda italiana che opera concretamente nel settore degli Affitti Brevi e del Property Management.
+          La nostra forza è la <strong class="text-[#002560]">trasparenza</strong>: sede in Italia, risultati verificabili.
+        </p>
+        <p class="text-[#002560]/80 leading-relaxed mb-6">
+          Niente teorie o corsi generici: offriamo <strong class="text-[#002560]">consulenze personalizzate</strong>
+          basate su esperienza diretta sul mercato.
+        </p>
+
+        <h3 class="text-2xl font-bold text-[var(--upg-red)] mb-2">Gianpaolo Delle Donne, co-founder</h3>
+        <p class="text-[#002560]/80 leading-relaxed">
+          Opera direttamente nel Property Management. La sua missione è aiutarti a capire se questo mercato
+          è adatto alle tue capacità e ai tuoi obiettivi, senza promesse irrealistiche.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  
+
+  <!-- CTA (brand strict): sfondo blu, testi bianchi, bottone rosso) -->
+  <section class="py-16 bg-[#002560]" id="prenota" aria-labelledby="cta-title">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 id="cta-title" class="text-3xl md:text-4xl font-bold text-white mb-6">
+          Prenota la tua consulenza gratuita
+        </h2>
+        <p class="text-lg md:text-xl text-white/90 mb-8">
+          30 minuti per fare chiarezza sul mondo degli Affitti Brevi
+        </p>
+        <p class="text-white/80 mb-10 max-w-2xl mx-auto">
+          Una chiamata gratuita, senza impegni, per capire se il Property Management può essere la tua opportunità.
+        </p>
+       <a href="#prenota" class="focus-ring inline-flex items-center text-lg bg-[var(--upg-red)] hover:bg-[var(--upg-red-dark)] text-white font-bold py-4 px-10 rounded-full transition duration-300 shadow-lg">
+          <svg class="mr-2 w-5 h-5" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          Prenota il tuo slot ora
+        </a>
+        <div class="mt-6 text-white/70 text-sm">Solo 7 consulenze disponibili questa settimana</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (brand blue) -->
+  <footer class="bg-[#002560] text-white py-12" role="contentinfo">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div>
+          <img src="https://upgoldacquisizioni.it/wp-content/uploads/2025/09/Logo-bianco-trasparente-150x150.png" alt="Logo UpGold bianco" class="h-12" loading="lazy" decoding="async">
+        </div>
+        <div class="text-center md:text-right">
+          <p class="text-white/70 mb-2">© 2025 UpGold Acquisizioni. Tutti i diritti riservati.</p>
+          <p class="text-white/70">
+            <a href="#" class="focus-ring underline underline-offset-4 decoration-white/40 hover:decoration-white">Privacy Policy</a>
+            <span class="mx-2">·</span>
+            <a href="#" class="focus-ring underline underline-offset-4 decoration-white/40 hover:decoration-white">Termini di servizio</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Init scripts -->
+  <script>
+(function () {
+  var inner = document.getElementById('scroll-progress__inner');
+  if (!inner) return;
+
+  function setProgress() {
+    var doc = document.documentElement;
+    var scrollTop = doc.scrollTop || document.body.scrollTop;
+    var total = doc.scrollHeight - doc.clientHeight;
+    var ratio = total > 0 ? (scrollTop / total) : 0;
+    // Usa transform invece di width per evitare salti visivi e scroll orizzontale
+    inner.style.transform = 'scaleX(' + ratio + ')';
+  }
+
+  var ticking = false;
+  window.addEventListener('scroll', function () {
+    if (!ticking) {
+      requestAnimationFrame(function () {
+        setProgress();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  window.addEventListener('resize', setProgress, { passive: true });
+  setProgress();
+})();
+</script>
+
+  <noscript>
+    <div class="fixed bottom-4 left-1/2 -translate-x-1/2 bg-yellow-100 text-yellow-800 px-4 py-2 rounded shadow">
+      Per un'esperienza completa abilita JavaScript nel tuo browser.
+    </div>
+  </noscript>
+</body>
+</html>
