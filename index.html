@@ -14,6 +14,12 @@
 
   <meta name="description" content="Prenota una consulenza gratuita di 30 minuti con UpGold Acquisizioni per capire se il Property Management fa per te. Roadmap personalizzata, zero pressioni." />
 
+  <!-- Security Headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.youtube.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; frame-src https://www.youtube.com; connect-src 'self' https://cdnjs.cloudflare.com;">
+  <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
   <!-- Fonts (Self-Hosted) -->
   <link rel="stylesheet" href="assets/css/fonts.css">
 
@@ -135,10 +141,10 @@
               title="Video di presentazione UpGold"
               class="w-full h-full"
               loading="lazy"
-              frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen
-              referrerpolicy="strict-origin-when-cross-origin">
+              referrerpolicy="strict-origin-when-cross-origin"
+              style="border:0">
             </iframe>
           </div>
         </div>
@@ -235,10 +241,10 @@
             title="Video di presentazione UpGold"
             class="w-full h-full"
             loading="lazy"
-            frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
-            referrerpolicy="strict-origin-when-cross-origin">
+            referrerpolicy="strict-origin-when-cross-origin"
+            style="border:0">
           </iframe>
         </div>
       </div>
@@ -383,7 +389,7 @@
             <canvas id="pmChart"></canvas>
           </div>
         </div>
-        <p class="text-center text-sm md:text-base text-[#002560]/70 mt-3 md:mt-4">
+        <p class="text-center text-sm md:text-base text-[#002560]/75 mt-3 md:mt-4">
           Evoluzione del mercato degli Affitti Brevi post Covid-19
         </p>
       </div>
@@ -545,7 +551,7 @@
           <div class="flex items-center mb-4">
             <img src="https://static.photos/people/200x200/1" alt="Ritratto di Marco R." class="w-16 h-16 rounded-full mr-4" loading="lazy" decoding="async">
             <div>
-              <h4 class="font-bold text-[#002560]">Marco R.</h4>
+              <p class="font-bold text-[#002560]">Marco R.</p>
               <div class="flex text-[var(--upg-red)]" aria-label="Valutazione 5 su 5">
                 <svg class="w-4 h-4 fill-current" aria-hidden="true" viewBox="0 0 24 24">
                   <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
@@ -571,7 +577,7 @@
           <div class="flex items-center mb-4">
             <img src="https://static.photos/people/200x200/2" alt="Ritratto di Alessandra T." class="w-16 h-16 rounded-full mr-4" loading="lazy" decoding="async">
             <div>
-              <h4 class="font-bold text-[#002560]">Alessandra T.</h4>
+              <p class="font-bold text-[#002560]">Alessandra T.</p>
               <div class="flex text-[var(--upg-red)]" aria-label="Valutazione 5 su 5">
                 <svg class="w-4 h-4 fill-current" aria-hidden="true" viewBox="0 0 24 24">
                   <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
@@ -691,10 +697,10 @@
         <!-- Card dettagli -->
         <div class="mt-5 inline-block bg-white rounded-2xl shadow-[0_10px_28px_rgba(0,0,0,0.08)] ring-1 ring-black/5 text-left px-6 py-5">
           <ul class="space-y-2 text-[#002560]/90">
-            <li><span class="text-[#002560]/70">Tempo impiegato:</span> <span class="font-semibold text-[var(--upg-red)]">20+ ore</span></li>
-            <li><span class="text-[#002560]/70">Chiarezza ottenuta:</span> <span class="font-semibold text-[var(--upg-red)]">0%</span></li>
-            <li><span class="text-[#002560]/70">Confusione:</span> <span class="font-semibold text-[var(--upg-red)]">massima</span></li>
-            <li><span class="text-[#002560]/70">Personalizzazione:</span> <span class="font-semibold text-[var(--upg-red)]">Zero</span></li>
+            <li><span class="text-[#002560]/80">Tempo impiegato:</span> <span class="font-semibold text-[var(--upg-red)]">20+ ore</span></li>
+            <li><span class="text-[#002560]/80">Chiarezza ottenuta:</span> <span class="font-semibold text-[var(--upg-red)]">0%</span></li>
+            <li><span class="text-[#002560]/80">Confusione:</span> <span class="font-semibold text-[var(--upg-red)]">massima</span></li>
+            <li><span class="text-[#002560]/80">Personalizzazione:</span> <span class="font-semibold text-[var(--upg-red)]">Zero</span></li>
           </ul>
         </div>
       </div>
@@ -711,10 +717,10 @@
         <!-- Card dettagli (poco più grande) -->
         <div class="mt-5 inline-block bg-white rounded-2xl shadow-[0_12px_32px_rgba(0,0,0,0.10)] ring-1 ring-black/5 text-left px-7 py-6">
           <ul class="space-y-2 text-[#002560]/90">
-            <li><span class="text-[#002560]/70">Tempo impiegato:</span> <span class="font-semibold text-[#22c55e]">30 minuti</span></li>
-            <li><span class="text-[#002560]/70">Chiarezza ottenuta:</span> <span class="font-semibold text-[#22c55e]">100%</span></li>
-            <li><span class="text-[#002560]/70">Piano d’azione:</span> <span class="font-semibold text-[#22c55e]">Completo</span></li>
-            <li><span class="text-[#002560]/70">Personalizzazione:</span> <span class="font-semibold text-[#22c55e]">Totale</span></li>
+            <li><span class="text-[#002560]/80">Tempo impiegato:</span> <span class="font-semibold text-[#22c55e]">30 minuti</span></li>
+            <li><span class="text-[#002560]/80">Chiarezza ottenuta:</span> <span class="font-semibold text-[#22c55e]">100%</span></li>
+            <li><span class="text-[#002560]/80">Piano d'azione:</span> <span class="font-semibold text-[#22c55e]">Completo</span></li>
+            <li><span class="text-[#002560]/80">Personalizzazione:</span> <span class="font-semibold text-[#22c55e]">Totale</span></li>
           </ul>
         </div>
       </div>
@@ -757,9 +763,9 @@
 
       <!-- TESTO -->
       <div class="md:pl-6">
-        <h3 class="text-2xl md:text-3xl font-bold text-[#002560] mb-4">UpGold Acquisizioni</h3>
+        <p class="text-2xl md:text-3xl font-bold text-[#002560] mb-4">UpGold Acquisizioni</p>
         <p class="text-[#002560]/80 leading-relaxed mb-4">
-          Siamo un’azienda italiana che opera concretamente nel settore degli Affitti Brevi e del Property Management.
+          Siamo un'azienda italiana che opera concretamente nel settore degli Affitti Brevi e del Property Management.
           La nostra forza è la <strong class="text-[#002560]">trasparenza</strong>: sede in Italia, risultati verificabili.
         </p>
         <p class="text-[#002560]/80 leading-relaxed mb-6">
@@ -767,7 +773,7 @@
           basate su esperienza diretta sul mercato.
         </p>
 
-        <h3 class="text-2xl font-bold text-[var(--upg-red)] mb-2">Gianpaolo Delle Donne, co-founder</h3>
+        <p class="text-2xl font-bold text-[var(--upg-red)] mb-2">Gianpaolo Delle Donne, co-founder</p>
         <p class="text-[#002560]/80 leading-relaxed">
           Opera direttamente nel Property Management. La sua missione è aiutarti a capire se questo mercato
           è adatto alle tue capacità e ai tuoi obiettivi, senza promesse irrealistiche.
@@ -801,7 +807,7 @@
           </svg>
           Prenota il tuo slot ora
         </a>
-        <div class="mt-6 text-white/70 text-sm">Solo 7 consulenze disponibili questa settimana</div>
+        <div class="mt-6 text-white/80 text-sm">Solo 7 consulenze disponibili questa settimana</div>
       </div>
     </div>
   </section>
@@ -814,8 +820,8 @@
           <img src="https://upgoldacquisizioni.it/wp-content/uploads/2025/09/Logo-bianco-trasparente-150x150.png" alt="Logo UpGold bianco" class="h-12" loading="lazy" decoding="async">
         </div>
         <div class="text-center md:text-right">
-          <p class="text-white/70 mb-2">© 2025 UpGold Acquisizioni. Tutti i diritti riservati.</p>
-          <p class="text-white/70">
+          <p class="text-white/80 mb-2">© 2025 UpGold Acquisizioni. Tutti i diritti riservati.</p>
+          <p class="text-white/80">
             <a href="#" class="focus-ring underline underline-offset-4 decoration-white/40 hover:decoration-white">Privacy Policy</a>
             <span class="mx-2">·</span>
             <a href="#" class="focus-ring underline underline-offset-4 decoration-white/40 hover:decoration-white">Termini di servizio</a>
