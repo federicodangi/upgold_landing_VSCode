@@ -15,9 +15,13 @@
     const videoId = facade.dataset.videoId;
     if (!videoId) return;
 
-    // Crea thumbnail immagine (copertina personalizzata)
+    // Crea thumbnail immagine (copertina personalizzata responsive)
     const thumbnail = document.createElement('img');
-    thumbnail.src = 'assets/images/Copertina Video Landing.webp';
+    // Rileva se è mobile o desktop (breakpoint Tailwind md: 768px)
+    const isMobile = window.innerWidth < 768;
+    thumbnail.src = isMobile
+      ? 'assets/images/Copertina Video Landing (mobile).webp'
+      : 'assets/images/Copertina Landing UpGold (Desktop).webp';
     thumbnail.alt = 'Scopri come il Property Management può cambiare la tua vita';
     thumbnail.loading = 'lazy';
     thumbnail.className = 'w-full h-full object-cover';
