@@ -15,10 +15,10 @@
     const videoId = facade.dataset.videoId;
     if (!videoId) return;
 
-    // Crea thumbnail immagine
+    // Crea thumbnail immagine (copertina personalizzata)
     const thumbnail = document.createElement('img');
-    thumbnail.src = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
-    thumbnail.alt = 'Video thumbnail';
+    thumbnail.src = 'assets/images/Copertina Video Landing.webp';
+    thumbnail.alt = 'Scopri come il Property Management può cambiare la tua vita';
     thumbnail.loading = 'lazy';
     thumbnail.className = 'w-full h-full object-cover';
 
