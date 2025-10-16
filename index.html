@@ -44,12 +44,24 @@
       --progress-h: 4px;
     }
 
-    html, body { 
-      overflow-x: hidden; 
+    html, body {
+      overflow-x: hidden;
+      max-width: 100vw;
+      position: relative;
     }
 
-    body { 
-      font-family: 'Poppins', sans-serif; 
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Forza rimozione scroll orizzontale su mobile */
+    @media (max-width: 767px) {
+      html, body {
+        overflow-x: hidden !important;
+      }
+      * {
+        max-width: 100%;
+      }
     }
 
     .hero-gradient { 
@@ -86,14 +98,21 @@
     /* Helper: riga badge scorrevole senza scrollbar visibile */
     .no-scrollbar::-webkit-scrollbar { display: none }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none }
+
+    /* Padding top per compensare header fixed su mobile */
+    @media (max-width: 767px) {
+      .hero-with-fixed-header {
+        padding-top: 65px !important;
+      }
+    }
   </style>
 
   <!-- Nessuno script esterno necessario qui -->
 </head>
 <body class="bg-gray-50 text-[#002560]">
-  <!-- Barra avanzamento scroll -->
+  <!-- Barra avanzamento scroll (solo desktop) -->
   <div id="scroll-progress"
-       class="fixed top-0 left-0 right-0 h-[var(--progress-h)] z-[60] pointer-events-none"
+       class="hidden md:block fixed top-0 left-0 right-0 h-[var(--progress-h)] z-[60] pointer-events-none"
        role="presentation" aria-hidden="true">
     <div id="scroll-progress__inner"
          class="h-full bg-[var(--upg-red)]"
@@ -101,7 +120,7 @@
   </div>
 
   <!-- Header -->
-  <header class="md:fixed relative top-0 left-0 right-0 z-50 bg-white md:bg-white/85 md:backdrop-blur-sm shadow-sm md:shadow-md transition-all duration-300" role="banner">
+  <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white md:bg-white/85 md:backdrop-blur-sm shadow-sm md:shadow-md transition-all duration-300" role="banner">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
       <a href="#top" class="inline-flex items-center focus-ring" aria-label="Homepage UpGold Acquisizioni">
         <img src="/favicon-96x96.png"
@@ -124,7 +143,7 @@
   </header>
 
  <!-- Hero Section -->
-<section class="hero-gradient relative overflow-visible md:overflow-hidden md:pt-10" id="top">
+<section class="hero-gradient hero-with-fixed-header relative overflow-visible md:overflow-hidden md:pt-10" id="top">
   <div class="container mx-auto px-4 py-12 md:py-0 md:min-h-screen flex flex-col md:flex-row items-center md:items-center justify-center">
 
     <!-- Colonna sinistra (testo) -->
@@ -286,11 +305,11 @@
 </section>
 
   <!-- Business Model -->
-<section class="py-20 bg-gray-50">
+<section class="py-12 md:py-20 bg-gray-50">
   <div class="container mx-auto px-4">
     <!-- Titolo -->
     <div class="text-center mb-14">
-      <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-10 leading-[1.9] text-center">
+      <h2 class="text-2xl md:text-5xl font-bold tracking-tight mb-10 leading-tight md:leading-[1.9] text-center">
        <span class="text-[#002560]">Scopri il Business Model</span><br>
        <span class="text-[#002560]">che fa <span class="text-[var(--upg-red)]">guadagnare con gli immobili...</span></span><br>
        <span class="text-[#002560]">Anche senza possederli!</span>
@@ -910,6 +929,48 @@
   // Inizializza immediatamente e dopo un breve delay per sicurezza
   setProgress();
   setTimeout(setProgress, 100);
+})();
+</script>
+
+  <!-- Header hide on scroll (mobile only) -->
+  <script>
+(function() {
+  // Solo su mobile (< 768px)
+  if (window.innerWidth >= 768) return;
+
+  var header = document.getElementById('header');
+  if (!header) return;
+
+  var lastScrollTop = 0;
+  var scrollThreshold = 50; // Pixels minimi di scroll prima di nascondere
+
+  function handleScroll() {
+    var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    // Se scroll verso il basso e oltre la soglia
+    if (currentScroll > lastScrollTop && currentScroll > scrollThreshold) {
+      // Nascondi header
+      header.style.transform = 'translateY(-100%)';
+    }
+    // Se scroll verso l'alto
+    else if (currentScroll < lastScrollTop) {
+      // Mostra header
+      header.style.transform = 'translateY(0)';
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+  }
+
+  var ticking = false;
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      requestAnimationFrame(function() {
+        handleScroll();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
 })();
 </script>
 
