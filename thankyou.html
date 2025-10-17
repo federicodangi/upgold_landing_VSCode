@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grazie per la prenotazione | UpGold Acquisizioni</title>
+
+  <!-- Fonts (Self-Hosted) -->
+  <link rel="stylesheet" href="assets/css/fonts.css">
+
+  <!-- Tailwind CSS (Ottimizzato) -->
+  <link rel="stylesheet" href="assets/css/tailwind.min.css">
+
+  <!-- Stili Thank You Page -->
+  <link rel="stylesheet" href="assets/css/thankyou.css" />
+
+  <link rel="icon" type="image/png" href="/favicon-96x96.png?v=1" sizes="96x96" />
+  <link rel="shortcut icon" href="/favicon.ico?v=1" />
+  <meta name="theme-color" content="#002560" />
+  <meta name="description" content="Grazie per aver prenotato la tua consulenza gratuita con UpGold Acquisizioni. Ti aspettiamo!" />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Grazie per la prenotazione | UpGold Acquisizioni" />
+  <meta property="og:description" content="Grazie per aver prenotato la tua consulenza gratuita con UpGold Acquisizioni. Ti aspettiamo!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="it_IT" />
+
+  <!-- Structured Data (JSON-LD) per SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ConfirmationPage",
+    "name": "Conferma Prenotazione Consulenza",
+    "description": "Pagina di conferma per prenotazione consulenza con UpGold Acquisizioni",
+    "provider": {
+      "@type": "Organization",
+      "name": "UpGold Acquisizioni",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+39-392-524-1891",
+        "contactType": "Consulenza",
+        "areaServed": "IT",
+        "availableLanguage": "Italian"
+      }
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Hero Section - Gradient -->
+  <section class="hero-section" aria-labelledby="confirmation-title">
+    <div class="checkmark-container" role="img" aria-label="Conferma prenotazione">
+      <svg class="checkmark" viewBox="0 0 52 52" aria-hidden="true">
+        <path d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+      </svg>
+    </div>
+    <h1 id="confirmation-title">Prenotazione Confermata!</h1>
+    <p class="subtitle">Abbiamo registrato la tua consulenza nel calendario di Gianpaolo</p>
+  </section>
+
+  <!-- Phone Section - White -->
+  <section class="phone-section" aria-labelledby="phone-title">
+    <div class="container">
+      <div class="section-icon" role="img" aria-label="Telefono">📞</div>
+      <h2 id="phone-title" class="section-title">Sappiamo quanto sono fastidiose le chiamate dei Call Center</h2>
+      <p class="section-description">Per questo vogliamo essere trasparenti con te fin da subito:</p>
+
+      <div class="phone-card">
+        <div class="phone-label">Numero di Gianpaolo</div>
+        <a href="tel:+393925241891" class="phone-number-link" aria-label="Chiama Gianpaolo al numero +39 392 524 1891">
+          <div class="phone-number">+39 392 524 1891</div>
+        </a>
+        <p class="phone-note">Salvalo in rubrica o segnalo da qualche parte, così saprai con certezza che è lui a chiamarti per la consulenza.</p>
+
+        <div class="phone-actions">
+          <button class="btn-action btn-copy" id="copyPhoneBtn" aria-label="Copia numero di telefono">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <span id="copyBtnText">Copia numero</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preparation Section - Gray -->
+  <section class="prep-section" aria-labelledby="prep-title">
+    <div class="container">
+      <div class="section-icon" role="img" aria-label="Suggerimenti">💡</div>
+      <h2 id="prep-title" class="section-title">Preparati al meglio</h2>
+      <p class="prep-intro">Per massimizzare il valore della consulenza, rifletti su:</p>
+
+      <ul class="prep-list" role="list">
+        <li>Quali sono i tuoi obiettivi concreti</li>
+        <li>Cosa ti piacerebbe sapere del mondo del Property Management</li>
+        <li>Cosa ti aspetti di ottenere nei prossimi mesi</li>
+      </ul>
+
+      <a href="index.html" class="cta-button" data-analytics="homepage-link">
+        Torna alla homepage
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer Section - Blue -->
+  <footer class="footer-section" role="contentinfo" aria-labelledby="footer-title">
+    <div class="footer-content">
+      <h3 id="footer-title" class="footer-title">Hai necessità di cancellare o rischedulare la tua consulenza?</h3>
+      <p class="footer-text">Invia un messaggio al numero <a href="tel:+393925241891" class="footer-phone" aria-label="Chiama per modificare appuntamento">+39 392 524 1891</a> con il tuo nome e cognome e la tua richiesta.</p>
+      <p class="footer-text">Ti saremo davvero grati per aver rispettato il nostro tempo <span class="emoji" role="img" aria-label="Grazie">🙏</span></p>
+    </div>
+  </footer>
+
+  <!-- JavaScript esterno -->
+  <script src="assets/js/thankyou.js"></script>
+</body>
+</html>
